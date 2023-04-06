@@ -1,4 +1,5 @@
 name: Quire
+on: push
 jobs:
   quire-build:
     runs-on: ubuntu-latest

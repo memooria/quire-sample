@@ -2,7 +2,7 @@ name: Quire
 on: push
 jobs:
   quire-build:
-    runs-on: node
+    runs-on: node:16.20.0-bullseye
     steps:
       - uses: actions/checkout@v2
       - name: Quire install

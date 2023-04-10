@@ -2,13 +2,15 @@ name: Quire
 on: push
 jobs:
   quire-build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
-      - name: Packages install
+      - name: Nodejs install
         run: |
+          curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
           sudo apt-get update 
-          sudo apt-get -y install nodejs npm
+          sudo apt-get -y install nodejs
+          node -v
       - name: Quire install
         run: sudo npm install --global @thegetty/quire-cli
       - name: Quire build

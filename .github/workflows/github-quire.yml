@@ -10,7 +10,7 @@ jobs:
           sudo apt-get update 
           sudo apt-get -y install nodejs npm
       - name: Quire install
-        run: npm install --global @thegetty/quire-cli
+        run: sudo npm install --global @thegetty/quire-cli
       - name: Quire build
         run: quire build
       - name: GH Pages customizations

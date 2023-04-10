@@ -20,7 +20,7 @@ jobs:
             #    npm --version
       - name: Quire install
         run: |
-          sudo npm install -g npm@9.6.4
+          sudo npm install --global @11ty/eleventy --save-dev
           sudo npm install --global @thegetty/quire-cli
       - name: Quire build
         run: quire build

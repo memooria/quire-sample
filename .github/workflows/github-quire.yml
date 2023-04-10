@@ -5,14 +5,23 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
-      - name: Nodejs install
-        run: |
-          curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-          sudo apt-get update 
-          sudo apt-get -y install nodejs
-          node -v
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 19
+            #- name: Nodejs install
+            #  run: |
+            #    curl -sL https://deb.nodesource.com/setup_19.x | sudo bash -
+            #    sudo apt-get update 
+            #    sudo apt remove -y nodejs npm
+            #    sudo apt-get -y install nodejs
+            #    which node
+            #    node -v
+            #    which npm
+            #    npm --version
       - name: Quire install
-        run: sudo npm install --global @thegetty/quire-cli
+        run: |
+          sudo npm install -g npm@9.6.4
+          sudo npm install --global @thegetty/quire-cli
       - name: Quire build
         run: quire build
       - name: GH Pages customizations

@@ -2,9 +2,13 @@ name: Quire
 on: push
 jobs:
   quire-build:
-    runs-on: node:16.20.0-bullseye
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
+      - name: Packages install
+        run: |
+          apt-get update 
+          apt-get -y install nodejs npm
       - name: Quire install
         run: npm install --global @thegetty/quire-cli
       - name: Quire build

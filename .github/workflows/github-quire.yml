@@ -2,30 +2,30 @@ name: Quire
 on: push
 jobs:
   quire-build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        #- uses: actions/setup-node@v3
-        #  with:
-        #    node-version: 18
-      - name: Nodejs install
-        run: |
-          sudo apt-get update 
-          sudo apt remove -y nodejs npm
-          curl -sL https://deb.nodesource.com/setup_19.x | sudo bash -
-          sudo apt-get -y install nodejs
-          which node
-          node -v
-          which npm
-          npm --version
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+            #- name: Nodejs install
+            #  run: |
+            #    sudo apt-get update 
+            #    sudo apt remove -y nodejs npm
+            #    curl -sL https://deb.nodesource.com/setup_19.x | sudo bash -
+            #    sudo apt-get -y install nodejs
+            #    which node
+            #    node -v
+            #    which npm
+            #    npm --version
       - name: Git init
         run: |
           git config --global user.name "Github Action"
           git config --global user.email "gihubaction@users.noreply.github.com"
       - name: Quire install
         run: |
-          sudo npm install --global @11ty/eleventy --unsafe-perm
-          npx @11ty/eleventy
+          #sudo npm install --global @11ty/eleventy --unsafe-perm
+          #npx @11ty/eleventy
           sudo npm install --global @thegetty/quire-cli
       - name: Quire build
         run: quire build

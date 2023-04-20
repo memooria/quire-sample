@@ -18,6 +18,8 @@ jobs:
             #    node -v
             #    which npm
             #    npm --version
+      - name: Build the website
+        run: npx @11ty/eleventy
       - name: Git init
         run: |
           git config --global user.name "Github Action"

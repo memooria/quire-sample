@@ -21,11 +21,11 @@ jobs:
       - name: Git init
         run: |
           git config --global user.name "Github Action"
-          npx @11ty/eleventy
           git config --global user.email "gihubaction@users.noreply.github.com"
       - name: Quire install
         run: |
           sudo npm install --global @11ty/eleventy --save-dev
+          npx @11ty/eleventy
           sudo npm install --global @thegetty/quire-cli
       - name: Quire build
         run: quire build

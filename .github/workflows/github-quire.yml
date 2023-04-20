@@ -24,7 +24,7 @@ jobs:
           git config --global user.email "gihubaction@users.noreply.github.com"
       - name: Quire install
         run: |
-          #sudo npm install --global @11ty/eleventy --save-dev
+          sudo npm install --global @11ty/eleventy --save-dev
           sudo npm install --global @thegetty/quire-cli
       - name: Quire build
         run: quire build

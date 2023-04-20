@@ -25,7 +25,7 @@ jobs:
       - name: Quire install
         run: |
           sudo npm install --global @11ty/eleventy --unsafe-perm
-          npx @11ty/eleventy
+          #npx @11ty/eleventy
           sudo npm install --global @thegetty/quire-cli
       - name: Quire build
         run: quire build

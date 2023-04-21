@@ -46,6 +46,8 @@ jobs:
           mv _site docs
           touch docs/.nojekyll
           touch docs/_assets/.nojekyll
+          test -d docs/static || mkdir docs/static
+          echo "quire-sample.memooria.org" > docs/static/CNAME
       - name: Git push back
         run: |
           git add docs

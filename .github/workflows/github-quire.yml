@@ -41,4 +41,8 @@ jobs:
         run: |
           git add docs
           git commit -m "Quire: publishing assets"
-          git push
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}

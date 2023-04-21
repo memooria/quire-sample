@@ -1,5 +1,13 @@
 name: Quire
 on: push
+permissions:
+  actions: read
+  checks: read
+  contents: write
+  deployments: write
+  pull-requests: write
+  repository-projects: write
+  statuses: write
 jobs:
   quire-build:
     #runs-on: self-hosted

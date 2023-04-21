@@ -24,11 +24,11 @@ jobs:
         run: |
           git config --global user.name "Github Action"
           git config --global user.email "gihubaction@users.noreply.github.com"
-      - name: Quire install
-        run: |
-          sudo npm install --global @11ty/eleventy --unsafe-perm
-          #npx @11ty/eleventy
-          sudo npm install --global @thegetty/quire-cli
+          #- name: Quire install
+          #  run: |
+          #    sudo npm install --global @11ty/eleventy --unsafe-perm
+          #    #npx @11ty/eleventy
+          #    sudo npm install --global @thegetty/quire-cli
       - name: Quire build
         run: quire build
       - name: GH Pages customizations

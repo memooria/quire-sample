@@ -16,7 +16,7 @@ _temp/
 .eslintcache
 
 # Dependency directories
-node_modules/
+#node_modules/
 
 # Local Netlify folder
 .netlify

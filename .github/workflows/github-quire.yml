@@ -2,24 +2,24 @@ name: Quire
 on: push
 jobs:
   quire-build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-            #- name: Nodejs install
-            #  run: |
-            #    sudo apt-get update 
-            #    sudo apt remove -y nodejs npm
-            #    curl -sL https://deb.nodesource.com/setup_19.x | sudo bash -
-            #    sudo apt-get -y install nodejs
-            #    which node
-            #    node -v
-            #    which npm
-            #    npm --version
-      - name: Build the website
-        run: npx @11ty/eleventy
+        #- uses: actions/setup-node@v3
+        #  with:
+        #    node-version: 16
+        #      #- name: Nodejs install
+        #      #  run: |
+        #      #    sudo apt-get update 
+        #      #    sudo apt remove -y nodejs npm
+        #      #    curl -sL https://deb.nodesource.com/setup_19.x | sudo bash -
+        #      #    sudo apt-get -y install nodejs
+        #      #    which node
+        #      #    node -v
+        #      #    which npm
+        #      #    npm --version
+        #- name: Build the website
+        #  run: npx @11ty/eleventy
       - name: Git init
         run: |
           git config --global user.name "Github Action"

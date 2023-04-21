@@ -45,6 +45,7 @@ jobs:
           rm -rf docs || echo "not removing docs"
           mv _site docs
           touch docs/.nojekyll
+          touch docs/_assets/.nojekyll
       - name: Git push back
         run: |
           git add docs
